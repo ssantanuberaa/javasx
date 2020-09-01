@@ -81,18 +81,29 @@ function xFrames(element){
 	};
 	this.fetchFrame = function(frameOptions){
 		this.addLoading();
+		let that = this;
 		return new Promise(function(resolve, reject){
 			if (frameOptions.url == undefined) {
 				frameOptions.url = "/js/build/frames/" + frameOptions.name + ".min.js";
 			}
-			axios.post(frameOptions.url).then(function(res){
-				let compiledModule = eval(res.data).default;
-				resolve(compiledModule);
-			}).catch(function(error){
-				console.log(error);
-				this.removeLoading();
-			}.bind(this));
-		});
+			if(this.options.fetchMethod == "GET"){
+				axios.get(frameOptions.url).then(function(res){
+					let compiledModule = eval(res.data).default;
+					resolve(compiledModule);
+				}).catch(function(error){
+					console.log(error);
+					this.removeLoading();
+				}.bind(this));
+			}else{
+				axios.post(frameOptions.url).then(function(res){
+					let compiledModule = eval(res.data).default;
+					resolve(compiledModule);
+				}).catch(function(error){
+					console.log(error);
+					this.removeLoading();
+				}.bind(this));
+			}			
+		}.bind(this));
 	};
 	this.compileFrame = function(frameModule, frameOptions, index, frameData){
 		frame.frameOptions = frameOptions;
