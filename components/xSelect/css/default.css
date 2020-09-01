@@ -1,0 +1,401 @@
+/*xSelect*/
+.xSelect.default{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 100%;
+}
+.xSelect.default .xSelectInput{ 
+	position: relative; 
+	font-size: 18px;
+	width: calc(100% - 30px);
+	border: none;
+	outline: none;
+	cursor: pointer;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	padding-right: 30px;
+	overflow-x: hidden;
+	white-space: nowrap;
+	overflow-y: hidden;
+}
+/* Overriding : xDropDown */
+.xSelect.default .xDropdownContentContainer{
+	width: 100%;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+	max-height: 250px;
+}
+/* Overriding : xStaticList */
+.xSelect.default .xStaticListItem{
+	cursor: pointer;
+	transition: 300ms all;
+}
+.xSelect.default.single .xStaticListItem:hover{
+	background: #eee;
+}
+.xSelect.default.single .xStaticListItem.Selected{
+	background: #673AB7 !important;
+	color: #fff !important;
+}
+.xSelect.default.multiple .xStaticListItem.Selected{
+	background: #fff !important;
+	color: black !important;
+}
+/* Disabled */
+.xSelect.default.disabled .xSelectInput{
+	color: #b5b5b5 !important
+}
+/* xSelect - xDropDown Component */
+.xSelect.default .xDropDown{
+	position: relative;
+}
+.xSelect.default .xDropDown.Disabled{
+	pointer-events: none;
+	cursor: not-allowed;
+}
+.xSelect.default .xDropdownTrigger{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.xSelect.default .xDropdownContentContainer{
+	display: none;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	background: rgba(41, 41, 41, 0.9607843137254902);
+	z-index: 1000;
+	overflow-y: auto;
+}
+.xSelect.default .xDropdownContent{
+	width: inherit;
+	height: inherit;
+	background: #fff;
+	display: block;
+}
+/* Mobile Modal */
+.xSelect.default .xDropdownContentContainer.MobileModal{
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;	
+	max-height: 100vh;
+	z-index: 10000;
+}
+.xSelect.default .xDropdownContentContainer.MobileModal .xDropdownContent{
+	width: 80%;
+	height: auto;
+	max-height: calc(100vh - 100px);
+}
+/* xSelect - xDropDown Component */
+.xSelect.default .xStaticList{
+}
+.xSelect.default .xStaticList .xStaticListItem{
+	padding: 10px;
+	border-bottom: 1px solid #eee;
+}
+.xSelect.default .xStaticList>div:last-child{
+	border-bottom: none;
+}
+/* xSelect - xDropDown Component */
+.xSelect.default .xInputWrapper{
+	position: relative;
+	width: 100%;
+}
+.xSelect.default .xInputWrapper .xInputWrapperInputContainer{
+	height: 30px;
+	position: relative;
+	display: flex;
+	border-bottom: 1px solid #757575;
+}
+.xSelect.default .xInputWrapper .xInputWrapperLabel{
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 17px;
+	transition: all .3s;
+	height: 30px;
+	display: inline-flex;
+	align-items: center;
+	z-index: 10;
+	white-space: nowrap;
+	pointer-events: none;
+	background: transparent;
+}
+.xSelect.default .xInputWrapper .xInputWrapperInputField{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	flex: 1;
+	white-space: nowrap;
+}
+.xSelect.default .xInputWrapper .xInputWrapperFieldContainer{
+	position: relative;
+	flex: 1;
+}
+.xSelect.default .xInputWrapper .xInputWrapperIconPrefixContainer{
+	display: flex;
+	align-items: center;
+}
+.xSelect.default .xInputWrapper .xInputWrapperIconPrefixContainer .xIcon{
+	height: 100%;
+}
+.xSelect.default .xInputWrapper .xInputWrapperLabel.raised{
+	position: absolute;
+	top: -22px;
+	left: 0px;
+	bottom: unset;
+	color: #505050;
+	font-size: 13px;
+}
+.xSelect.default .xInputWrapper .xInputWrapperInfoSection{
+	display: flex;
+	position: absolute;
+	width: 100%;
+	bottom: -15px;
+}
+.xSelect.default .xInputWrapper .xInputWrapperInfoText{
+	flex: 1;
+	transition: all 300ms;
+}
+/* Error */
+.xSelect.default .xInputWrapper .xInputWrapperInfoText.error{
+	font-size: 13px;
+	font-weight: 400;
+	color: crimson;
+}
+/* Help */
+.xSelect.default .xInputWrapper .xInputWrapperInfoText.help{
+	font-size: 13px;
+	font-weight: 400;
+	color: #03a9f4;
+}
+/* Counter */
+.xSelect.default .xInputWrapper .xInputWrapperCounterContainer{
+	font-size: 12px;
+	font-weight: bold;
+	color: #607D8B;
+}
+/* Disable */
+.xSelect.default .xInputWrapper.disabled .xInputWrapperLabel, .xInputWrapper.disabled i{
+	color: #b5b5b5 !important;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+.xSelect.default .xInputWrapper.disabled .xInputWrapperInputContainer{
+	border-bottom: 1px solid #b5b5b5;
+}
+
+/* xInputWrapper Bar */
+.xSelect.default .xInputWrapper .xInputWrapperInputBar{
+	position: absolute;
+	display: block;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	height: 0 !important;
+}
+.xSelect.default .xInputWrapper .xInputWrapperInputBar:before, .xSelect.default .xInputWrapper .xInputWrapperInputBar:after{
+	content:'';
+	height: 2px; 
+	width:0;
+	bottom: 0px; 
+	position:absolute;
+	background:#5264AE; 
+	transition:0.2s ease all; 
+	-moz-transition:0.2s ease all; 
+	-webkit-transition:0.2s ease all;
+}
+.xSelect.default .xInputWrapper .xInputWrapperInputBar:before{
+	left:50%;
+}
+.xSelect.default .xInputWrapper .xInputWrapperInputBar:after{
+	right:50%;
+}
+.xSelect.default .xInputWrapper .active.xInputWrapperInputBar:before, .xSelect.default .xInputWrapper .active.xInputWrapperInputBar:after{
+	width:50%;
+}
+.xSelect.default .xInputWrapper .barAnimation.xInputWrapperInputBar:before{
+	left: 0 !important;
+	animation-name: barAnimation;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+.xSelect.default .xInputWrapper .barAnimation.xInputWrapperInputBar:after{
+	right: 0;
+	width: 0;
+}
+/* Expand/Collapse Icon for Dropdown Inputs */
+.xSelect.default .xInputWrapper .xInputWrapperInputContainer::after{
+	content : "";
+	width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(135deg);
+    transition: all 300ms;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	display: none;
+}
+.xSelect.default .xInputWrapper.showExpand .xInputWrapperInputContainer::after{
+	display: block;
+}
+.xSelect.default .xInputWrapper .xInputWrapperInputContainer.expand::after{
+	transform: rotate(-45deg) !important;
+}
+.xSelect.default .xInputWrapper.disabled .xInputWrapperInputContainer::after{
+	border: 1px solid #b5b5b5;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
+}
+
+/* Animations */
+@keyframes barAnimation{
+	0%{
+		width: 0;
+	}
+	100%{
+		width: 100%;
+	}
+}
+@keyframes xInputWrapperStatusContainerAnimationShow{
+	0%{
+		height: 0;
+	}
+	100%{
+		height: 15px;
+	}
+}
+@keyframes xInputWrapperStatusContainerAnimationHide{
+	0%{
+		height: 15px;
+	}
+	100%{
+		height: 0;
+	}
+}
+.statusAnimationShow{
+	animation-name: xInputWrapperStatusContainerAnimationShow;
+	animation-duration: 300ms;
+	animation-fill-mode: forwards;
+}
+.statusAnimationHide{
+	animation-name: xInputWrapperStatusContainerAnimationHide;
+	animation-duration: 300ms;
+	animation-fill-mode: forwards;
+}
+
+/* Checkbox */
+.xSelect.default .xCheckBoxContainer{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.xSelect.default .xCheckBox {
+	position: relative;
+	text-align: left;
+}
+.xSelect.default .xCheckBox.xCheckBox-inline {
+	display: inline-block;
+}
+.xSelect.default .xCheckBox label {
+	cursor: pointer;
+	display: inline;
+	line-height: 1.25em;
+	vertical-align: top;
+	clear: both;
+	padding-left: 1px;
+	font-size: 15px;
+	color: black;
+}
+.xSelect.default .xCheckBox label:not(:empty) {
+	padding-left: 0.75em;
+}
+.xSelect.default .xCheckBox label:before, .xCheckBox label:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	box-sizing: border-box;
+}
+.xSelect.default .xCheckBox label:before {
+	width: 1.25em;
+	height: 1.25em;
+	background: #fff;
+	border: 2px solid rgba(0, 0, 0, 0.54);
+	border-radius: 0.125em;
+	cursor: pointer;
+	transition: background .3s;
+}
+.xSelect.default .xCheckBox input[type="checkbox"] {
+	outline: 0;
+	visibility: hidden;
+	width: 1.25em;
+	margin: 0;
+	display: block;
+	float: left;
+	font-size: inherit;
+}
+.xSelect.default .xCheckBox input[type="checkbox"].Checked + label:before {
+	background: #337ab7;
+	border: none;
+}
+.xSelect.default .xCheckBox input[type="checkbox"].Checked + label:after {
+	transform: translate(0.25em, 0.3365384615em) rotate(-45deg);
+	width: 0.75em;
+	height: 0.375em;
+	border: 0.125em solid #fff;
+	border-top-style: none;
+	border-right-style: none;
+}
+.xSelect.default .xCheckBox input[type="checkbox"].Disabled + label:before {
+	border-color: rgba(0, 0, 0, 0.26);
+}
+.xSelect.default .xCheckBox input[type="checkbox"].Disabled.Checked + label:before {
+	background: rgba(0, 0, 0, 0.26);
+}
+/* Small */
+.xSelect.default.small .xCheckBox input[type="checkbox"].Checked + label:after {
+	transform: translate(4px, 4px) rotate(-40deg);
+    width: 0.6em;
+    height: 0.5em;
+    border: 0.125em solid #fff;
+    border-top-style: none;
+    border-right-style: none;
+}
+.xSelect.default.small .xCheckBox label:before{
+	width: 1em;
+    height: 1em;
+    background: #fff;
+    border: 2px solid rgba(0, 0, 0, 0.54);
+    border-radius: 0.125em;
+    cursor: pointer;
+    transition: background .3s;
+}
+.xSelect.default .MultipleValuesContainer{
+	display: flex;
+}
+.xSelect.default .MultipleValuesContainer>div{
+	margin-right: 10px;
+	padding: 5px;
+	font-size: 12px;
+	background: #eee;
+	border-radius: 20px;
+}
+.xSelect.default .xInputRequiredMark{
+	font-size: 15px;
+	color: red;
+	font-weight: bold;
+	position: relative;
+	margin-left: 5px;
+	bottom: 5px;
+}

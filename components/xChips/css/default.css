@@ -1,0 +1,23 @@
+.ChipsContainer{
+	display: flex;
+	flex-wrap: wrap;
+}
+.xChipsChipItem{
+	padding: 10px;
+	border-radius: 25px;
+	border: 1px solid #ccc;
+	background: #eee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	font-size: 13px;
+	height: 25px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.LabelContainer{
+	font-size: 15px;
+	font-weight: 400;
+	margin-bottom: 5px;
+}

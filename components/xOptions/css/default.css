@@ -1,0 +1,138 @@
+.xOptions.default{
+	padding-bottom: 20px;
+	padding-top: 20px;
+	position: relative;
+}
+.xOptions.default .OptionContainer{
+	display: flex;
+	flex-wrap: wrap;
+	padding-top: 5px;
+}
+.xOptions.default .EachOption{
+	height: 36px;
+	min-width: 64px;
+	padding: 0 16px;
+	font-size: 0.875rem;
+	border-color: #1867c0 !important;
+	color: #333;
+	cursor: pointer;
+	border-radius: 28px;
+	align-items: center;
+	display: inline-flex;
+	flex: 0 0 auto;
+	font-weight: 500;
+	letter-spacing: 0.0892857143em;
+	justify-content: center;
+	outline: 0;
+	position: relative;
+	text-decoration: none;
+	text-indent: 0.0892857143em;
+	text-transform: uppercase;
+	transition-duration: 0.28s;
+	transition-property: box-shadow, transform, opacity;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+	box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+	margin-bottom : 10px;   
+	margin-right: 15px;
+}
+.OptionsLabel{
+	font-size: 16px;
+	transition: all .3s;
+	height: 40px;
+	display: inline-flex;
+	align-items: center;
+	z-index: 10;
+	white-space: nowrap;
+	pointer-events: none;
+	background: transparent;
+}
+.xOptionsRequired{
+	position: relative;
+	bottom: 4px;
+	color: red;
+	font-size: 15px;
+	margin-left: 5px;
+}
+.xOptions.default .SelectedOption{
+	background-color: #1867c0 !important;
+	color: #fff !important;
+	border: 0;
+}
+.xOptions.default .error{
+	font-size: 13px;
+	font-weight: 400;
+	color: crimson;
+	margin: 0;
+	width: calc(100% - 60px);
+}
+@media only screen and (max-width: 700px) {
+	.xOptions.default .EachOption{
+		height: 30px;
+		font-size: 11px;
+	}
+}
+.xOptions.default .OptionContainer{
+	display: flex;
+	flex-wrap: wrap;
+	padding-top: 5px;
+}
+.xOptions.default .EachOption{
+	height: 36px;
+	min-width: 64px;
+	padding: 0 16px;
+	font-size: 0.875rem;
+	border-color: #1867c0 !important;
+	color: #333;
+	cursor: pointer;
+	border-radius: 28px;
+	align-items: center;
+	display: inline-flex;
+	flex: 0 0 auto;
+	font-weight: 500;
+	letter-spacing: 0.0892857143em;
+	justify-content: center;
+	outline: 0;
+	position: relative;
+	text-decoration: none;
+	text-indent: 0.0892857143em;
+	text-transform: uppercase;
+	transition-duration: 0.28s;
+	transition-property: box-shadow, transform, opacity;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+	box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+	margin-bottom : 10px;   
+	margin-right: 15px;
+}
+.xOptions.default .SelectedOption{
+	background-color: #1867c0 !important;
+	color: #fff !important;
+	border: 0;
+}
+.xOptions.default .error{
+	font-size: 13px;
+	font-weight: 400;
+	color: crimson;
+	margin: 0;
+	width: calc(100% - 60px);
+}
+.xOptionsLabelContainer{
+	position: relative;
+}
+@media only screen and (max-width: 700px) {
+	.xOptions.default .EachOption{
+		height: 30px;
+		font-size: 11px;
+	}
+}

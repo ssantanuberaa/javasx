@@ -1,0 +1,234 @@
+@keyframes xSubmitSpin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+.xButton.default .xButtonLoader {
+	border: 3px solid #f3f3f3; /* Light grey */
+	border-top: 3px solid #1976d2; /* default */
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	animation: xSubmitSpin 2s linear infinite;
+}
+.xButton.default{
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.xButton.default .xButtonElement{
+	height: 36px;
+	min-width: 64px;
+	padding: 0 16px;
+	color: #fff;
+	font-size: .875rem;
+	background-color: #1976d2;
+	align-items: center;
+	border-radius: 4px;
+	display: inline-flex;
+	flex: 0 0 auto;
+	font-weight: 500;
+	letter-spacing: .0892857143em;
+	justify-content: center;
+	outline: 0;
+	position: relative;
+	text-decoration: none;
+	text-indent: .0892857143em;
+	text-transform: uppercase;
+	transition-duration: .28s;
+	transition-property: box-shadow,transform,opacity;
+	transition-timing-function: cubic-bezier(.4,0,.2,1);
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+	cursor: pointer;
+	border-style: none;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+}
+.xButton.default .xButtonElement *{
+	font-size: 14px;
+	font-weight: 500;
+}
+.xButton.default .xButtonElement::before{
+	border-radius: inherit;
+	bottom: 0;
+	color: inherit;
+	content: "";
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: opacity .2s cubic-bezier(.4,0,.6,1);
+	background-color: currentColor;
+}
+.xButton.default .xButtonElement:active{
+	box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+}
+.xButton.default .xButtonElement i{
+	font-size: 18px;
+	color: #fff;
+}
+/* Colors */
+.xButton.default.blue .xButtonElement{
+	background-color: #1976d2 !important;
+}
+.xButton.default.blue .xButtonLoader{
+	border-top: 3px solid #1976d2;
+}
+.xButton.default.red .xButtonElement{
+	background-color: #e01d0e !important;
+}
+.xButton.default.red .xButtonLoader{
+	border-top: 3px solid #e01d0e;
+}
+.xButton.default.green .xButtonElement{
+	background-color: #4caf50 !important;
+}
+.xButton.default.green .xButtonLoader{
+	border-top: 3px solid #4caf50;
+}
+.xButton.default.yellow .xButtonElement{
+	background-color: #e48800 !important;
+}
+.xButton.default.yellow .xButtonLoader{
+	border-top: 3px solid #e48800;
+}
+.xButton.default.grey .xButtonElement{
+	background-color: #f5f5f5 !important;
+	color: rgba(0,0,0,.7) !important;
+	box-shadow: none;
+}
+.xButton.default.grey .xButtonLoader{
+	border-top: 3px solid #f5f5f5;
+}
+.xButton.default.grey .xButtonElement i{
+	color: rgba(0,0,0,.7) !important;
+}
+/* Small Button */
+.xButton.default.small .xButtonElement{
+	height: 28px;
+	padding: 0 7px;
+}
+.xButton.default.small .xButtonElement *{
+	font-size: 12px;
+	font-weight: 500;
+}
+.xButton.default.small .xButtonLoader{
+	width: 15px;
+	height: 15px;
+}
+.xButton.default.small i{
+	font-size: 14px;
+	font-weight: 500;
+}
+/* Medium Button */
+.xButton.default.medium .xButtonElement{
+	height: 34px;
+	padding: 0 9px;
+}
+.xButton.default.medium .xButtonElement{
+	font-size: 15px;
+	font-weight: 500;
+}
+.xButton.default.medium .xButtonLoader{
+	width: 18px;
+	height: 18px;
+}
+.xButton.default.medium i{
+	font-size: 18px;
+	font-weight: 500;
+}
+/* Big Button */
+.xButton.default.big .xButtonElement{
+	height: 44px;
+	padding: 0 15px;
+}
+.xButton.default.big .xButtonElement *{
+	font-size: 18px;
+	font-weight: 500;
+}
+.xButton.default.big .xButtonLoader{
+	width: 30px;
+	height: 30px;
+}
+.xButton.default.big i{
+	font-size: 22px;
+	font-weight: 500;
+}
+/* Circle Button */
+.xButton.default.circle.small .xButtonElement{
+	width: 28px;
+	min-width: 28px;
+	max-width: 28px;
+	padding: 0 !important;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.xButton.default.circle.medium .xButtonElement{
+	width: 34px;
+	min-width: 34px;
+	max-width: 34px;
+	padding: 0 !important;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.xButton.default.circle.big .xButtonElement{
+	width: 44px;
+	min-width: 44px;
+	max-width: 44px;
+	padding: 0 !important;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.xButton.default.circle .xIcon.hasIcon{
+	padding-right: 0 !important;
+}
+.xButton.default.circle.small i{
+	font-size: 13px;
+}
+.xButton.default.circle.medium i{
+	font-size: 16px;
+}
+.xButton.default.circle.big i{
+	font-size: 22px;
+}
+/* Float Button */
+.xButton.default.float{
+	position: fixed;
+	width: unset;
+	padding: 0 !important;
+}
+.xButton.default.float.left{
+	left: 30px;
+	right: unset;
+}
+.xButton.default.float.right{
+	right: 30px;
+	left: unset;
+}
+.xButton.default.float.top{
+	top: 30px;
+	bottom: unset;
+}
+.xButton.default.float.bottom{
+	bottom: 30px;
+	top: unset;
+}
+/* Inline */
+.xButton.default.inline{
+	display: inline-block !important;
+	padding: 0 !important
+}

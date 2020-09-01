@@ -1,0 +1,12 @@
+.xIcon.default{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.xIcon.default.hasIcon{
+	padding-right: 8px;
+}
+.xIcon.default .image-icon{
+	width: 20px;
+	height: 20px;
+}

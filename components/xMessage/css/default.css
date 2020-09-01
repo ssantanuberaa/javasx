@@ -1,0 +1,26 @@
+.xMessage.default{
+	display: flex;
+	padding: 10px;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 500;
+}
+.xMessage.default .xMessageContent{
+	font-size: 14px;
+	padding-left: 10px;
+	flex: 1;
+}
+/* state - error */
+.xMessage.default.error{
+	background: #ffb1ab;
+}
+.xMessage.default.error i{
+	font-size: 18px;
+}
+/* state - success */
+.xMessage.default.success{
+	background: #aadebd;
+}
+.xMessage.default.success i{
+	font-size: 18px;
+}

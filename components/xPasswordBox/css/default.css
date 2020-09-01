@@ -1,0 +1,236 @@
+/* Animations */
+@keyframes barAnimation{
+	0%{
+		width: 0;
+	}
+	100%{
+		width: 100%;
+	}
+}
+@keyframes xInputWrapperStatusContainerAnimationShow{
+	0%{
+		height: 0;
+	}
+	100%{
+		height: 15px;
+	}
+}
+@keyframes xInputWrapperStatusContainerAnimationHide{
+	0%{
+		height: 15px;
+	}
+	100%{
+		height: 0;
+	}
+}
+.xPasswordBox.default .xIcon{
+	cursor: pointer;
+}
+.xPasswordBox.default .Right{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.xPasswordBox.default .xTextBox{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.xPasswordBox.default input{
+	font-size: 18px;
+	padding-bottom: 3px;
+	padding-bottom: 3px;
+	display: block;
+	flex: 1;
+	border: none;
+	outline: none;
+	height: inherit;
+}
+/* Disabled */ 
+.xPasswordBox.default.disabled{
+	cursor: not-allowed;
+	pointer-events: none;
+}
+.xPasswordBox.default.disabled input{
+	cursor: not-allowed;
+	pointer-events: none;
+	color: #b5b5b5 !important;
+}
+/* Icon */
+.xPasswordBox.default .xIcon{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.xPasswordBox.default .xIcon i{
+	font-size: 20px;
+}
+.xPasswordBox.default .xIcon.hasIcon{
+	padding-right: 8px;
+}
+/* Input Wrapper */
+.xPasswordBox.default .xInputWrapper{
+	position: relative;
+	width: 100%;
+}
+.xPasswordBox.default .xInputWrapper .xInputWrapperInputContainer{
+	height: 30px;
+	position: relative;
+	display: flex;
+	border-bottom: 1px solid #757575;
+}
+.xPasswordBox.default .xInputWrapper .xInputWrapperLabel{
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 17px;
+	transition: all .3s;
+	height: 30px;
+	display: inline-flex;
+	align-items: center;
+	z-index: 10;
+	white-space: nowrap;
+	pointer-events: none;
+	background: transparent;
+}
+.xPasswordBox.default .xInputWrapper .xInputWrapperInputField{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	flex: 1;
+	white-space: nowrap;
+}
+.xPasswordBox.default .xInputWrapper .xInputWrapperFieldContainer{
+	position: relative;
+	flex: 1;
+}
+.xPasswordBox.default .xInputWrapper .xInputWrapperIconPrefixContainer{
+	display: flex;
+	align-items: center;
+}
+.xPasswordBox.default .xInputWrapper .xInputWrapperIconPrefixContainer .xIcon{
+	height: 100%;
+}
+.xPasswordBox.default .xInputWrapper .xInputWrapperLabel.raised{
+	position: absolute;
+	top: -22px;
+	left: 0px;
+	bottom: unset;
+	color: #505050;
+	font-size: 13px;
+}
+.xPasswordBox.default .xInputWrapper .xInputWrapperInfoSection{
+	display: flex;
+	position: absolute;
+	width: 100%;
+	bottom: -15px;
+}
+.xPasswordBox.default .xInputWrapper .xInputWrapperInfoText{
+	flex: 1;
+}
+/* Error */
+.xPasswordBox.default .xInputWrapper .xInputWrapperInfoText.error{
+	font-size: 13px;
+	font-weight: 400;
+	color: crimson;
+}
+/* Help */
+.xPasswordBox.default .xInputWrapper .xInputWrapperInfoText.help{
+	font-size: 13px;
+	font-weight: 400;
+	color: #03a9f4;
+}
+/* Counter */
+.xPasswordBox.default .xInputWrapper .xInputWrapperCounterContainer{
+	font-size: 12px;
+	font-weight: bold;
+	color: #607D8B;
+}
+/* Disable */
+.xPasswordBox.default .xInputWrapper.disabled .xInputWrapperLabel, .xInputWrapper.disabled i{
+	color: #b5b5b5 !important;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+.xPasswordBox.default .xInputWrapper.disabled .xInputWrapperInputContainer{
+	border-bottom: 1px solid #b5b5b5;
+}
+
+/* xInputWrapper Bar */
+.xPasswordBox.default .xInputWrapper .xInputWrapperInputBar{
+	position: absolute;
+	display: block;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	height: 0 !important;
+}
+.xPasswordBox.default .xInputWrapper .xInputWrapperInputBar:before, .xInputWrapper .xInputWrapperInputBar:after{
+	content:'';
+	height: 2px; 
+	width:0;
+	bottom: 0px; 
+	position:absolute;
+	background:#5264AE; 
+	transition:0.2s ease all; 
+	-moz-transition:0.2s ease all; 
+	-webkit-transition:0.2s ease all;
+}
+.xPasswordBox.default .xInputWrapper .xInputWrapperInputBar:before{
+	left:50%;
+}
+.xPasswordBox.default .xInputWrapper .xInputWrapperInputBar:after{
+	right:50%;
+}
+.xPasswordBox.default .xInputWrapper .active.xInputWrapperInputBar:before, .xInputWrapper .active.xInputWrapperInputBar:after{
+	width:50%;
+}
+.xPasswordBox.default .xInputWrapper .barAnimation.xInputWrapperInputBar:before{
+	left: 0 !important;
+	animation-name: barAnimation;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+.xPasswordBox.default .xInputWrapper .barAnimation.xInputWrapperInputBar:after{
+	right: 0;
+	width: 0;
+}
+/* Expand/Collapse Icon for Dropdown Inputs */
+.xPasswordBox.default .xInputWrapper .xInputWrapperInputContainer::after{
+	content : "";
+	width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(135deg);
+    transition: all 300ms;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	display: none;
+}
+.xPasswordBox.default .xInputWrapper.showExpand .xInputWrapperInputContainer::after{
+	display: block;
+}
+.xPasswordBox.default .xInputWrapper .xInputWrapperInputContainer.expand::after{
+	transform: rotate(-45deg) !important;
+}
+.xPasswordBox.default .xInputWrapper.disabled .xInputWrapperInputContainer::after{
+	border: 1px solid #b5b5b5;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
+}
+.xPasswordBox.default .statusAnimationShow{
+	animation-name: xInputWrapperStatusContainerAnimationShow;
+	animation-duration: 300ms;
+	animation-fill-mode: forwards;
+}
+.xPasswordBox.default .statusAnimationHide{
+	animation-name: xInputWrapperStatusContainerAnimationHide;
+	animation-duration: 300ms;
+	animation-fill-mode: forwards;
+}

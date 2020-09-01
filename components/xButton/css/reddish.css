@@ -1,0 +1,48 @@
+@keyframes xSubmitSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.xButton.reddish{
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.xButton.reddish .xButtonElement{
+    width: 200px;
+    font-size: 16px;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 44px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-image: linear-gradient(to right, #ff469c, #dd004a, #e37e9e, #dd004a);
+    box-shadow: 0 2px 6px 0 rgba(255, 80, 130, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.xButton.reddish .xButtonElement:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.xButton.reddish .xButtonLoader {
+    border: 3px solid #f3f3f3; /* Light grey */
+    border-top: 3px solid transparent; /* default */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: xSubmitSpin 2s linear infinite;
+}

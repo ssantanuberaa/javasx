@@ -1,0 +1,9 @@
+.xSlider.default{
+
+}
+.xSlider.default>div{
+	display: none;
+}
+.xSlider.default>div.active{
+	display: block;
+}

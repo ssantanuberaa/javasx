@@ -1,0 +1,9 @@
+.xStaticList.default{
+}
+.xStaticList.default .xStaticListItem{
+	padding: 10px;
+	border-bottom: 1px solid #eee;
+}
+.xStaticList.default>div:last-child{
+	border-bottom: none;
+}

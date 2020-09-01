@@ -1,0 +1,9 @@
+{
+	"name": "javasx",
+	"version": "1.0.4",
+	"author": {
+		"name" : "Santanu Bera",
+		"email": "ssantanuberaa@gmail.com"
+	},
+	"main": "x.js"
+}
