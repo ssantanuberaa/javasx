@@ -1,4 +1,7 @@
 # X
+The smallest and fastest Flutter like component framework you will ever meet :-)
+
+This framework is used to make scalable javascript component that can be shared easily throughout the entire application. This framework is built purely on Native Javascript and does not use HTML. The HTML DOM is created using Javascript. So you must have basic understanding of Javascript and must know how to manipulate DOM using JS.
 
 ## Install
 ```javascript
