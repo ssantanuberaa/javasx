@@ -3,7 +3,6 @@ The smallest and fastest Flutter like component framework you will ever meet :-)
 
 [![Known Vulnerabilities](https://snyk.io/test/npm/javasx/2.0.1/badge.svg)](https://snyk.io/test/npm/javasx/2.0.1)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-
 [![npm version](https://badge.fury.io/js/javasx.svg)](https://badge.fury.io/js/javasx)
 
 This framework is used to make scalable javascript component that can be shared easily throughout the entire application. This framework is built purely on Vanilla Javascript and does not use HTML. The HTML DOM is created using Javascript. So you must have basic understanding of Javascript and must know how to manipulate DOM using JS.
