@@ -30,7 +30,8 @@
   "bundleDependencies": false,
   "deprecated": false,
   "description": "The X Project",
+  "license": "GNU GENERAL PUBLIC LICENSE",
   "main": "x.js",
   "name": "javasx",
-  "version": "2.0.0"
+  "version": "2.0.4"
 }
