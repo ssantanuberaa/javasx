@@ -1,7 +1,7 @@
 # X
 The smallest and fastest Flutter like component framework you will ever meet :-)
 
-This framework is used to make scalable javascript component that can be shared easily throughout the entire application. This framework is built purely on Native Javascript and does not use HTML. The HTML DOM is created using Javascript. So you must have basic understanding of Javascript and must know how to manipulate DOM using JS.
+This framework is used to make scalable javascript component that can be shared easily throughout the entire application. This framework is built purely on Vanilla Javascript and does not use HTML. The HTML DOM is created using Javascript. So you must have basic understanding of Javascript and must know how to manipulate DOM using JS.
 
 ## Install
 ```javascript
@@ -13,14 +13,16 @@ npm i javasx
 import x from 'javasx';
 ```
 
-## Example: Create a Component
+## Create a Component
 ```javascript
+// Demo.js
 import x from 'javasx';
 export default x({
-	name: "Text", // Property name is optional
+	name: "Demo", // Property name is optional
 	render(){ 
 		// Must define a render method which must returns a DOM element
 		let element = document.createElement("div");
+		element.textContent = "Hello World";
 		return element;
 	},
 	mounted(){
@@ -36,4 +38,18 @@ export default x({
 		}
 	}
 });
+```
+
+## Use a Component
+```javascript
+import Demo from "Demo.js";
+
+let demo = new Demo(); // Instantiate the component using *new* keyword.
+
+// You can call any method which are defined in the component and perform specific task --
+demo.show("Hi..."); // will show alert
+
+// The following code is needed only once for whole application --
+let rootNode = document.getElementById("root");
+rootNode.appendChild(demo.element);
 ```
