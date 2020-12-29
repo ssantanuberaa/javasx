@@ -1,9 +1,36 @@
 {
-	"name": "javasx",
-	"version": "1.0.5",
-	"author": {
-		"name" : "Santanu Bera",
-		"email": "ssantanuberaa@gmail.com"
-	},
-	"main": "x.js"
+  "_from": "javasx",
+  "_id": "javasx@1.0.5",
+  "_inBundle": false,
+  "_integrity": "sha512-6pga5PBodtrm45kkirmWclrqECOtwe1HbETM+ssZ3j60LchM8oY1EXj88hG80KQUH+D587aiT+7UUVBeRUhoQw==",
+  "_location": "/javasx",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "javasx",
+    "name": "javasx",
+    "escapedName": "javasx",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/javasx/-/javasx-1.0.5.tgz",
+  "_shasum": "26e1dc8ddcdd34808a4c9f0654d381bc87bf9785",
+  "_spec": "javasx",
+  "_where": "D:\\xampp\\htdocs\\javasx",
+  "author": {
+    "name": "Santanu Bera",
+    "email": "ssantanuberaa@gmail.com"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "The X Project",
+  "main": "x.js",
+  "name": "javasx",
+  "version": "2.0.0"
 }
