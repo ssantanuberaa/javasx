@@ -54,6 +54,10 @@ function x(options){
 		if(options.render != undefined){
 			component.render = options.render;
 			component.element = component.render();
+			if(component.element.nodeType !== Node.ELEMENT_NODE){
+				console.log(component.element);
+				throw new Error("Must Return DOM Element : " + component.name);
+			}
 		}
 
 		// Mounted --
