@@ -7,6 +7,19 @@ function x(options){
 			loadCSS(options.css);
 		}
 
+		// $emit, $on --
+		component.$listeners = [];
+		component.$on = function(command, callback){
+			component.$listeners.push({command, callback});
+		};
+		component.$emit = function(command, payload){
+			component.$listeners.forEach((item)=>{
+				if(item.command == command){
+					item.callback(payload);
+				}
+			});
+		};
+
 		// Binding Props --
 		component.props = props;
 
