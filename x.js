@@ -68,7 +68,7 @@ function x(options){
 
 		// Apply root style --
 		if(props.style != undefined){
-			applyRootStyle(props, component);
+			component.element.setAttribute("style", props.style);
 		}
 
 		// CSS --
@@ -110,9 +110,6 @@ function x(options){
 		classNames.forEach(function(name){
 			component.element.classList.add(name);
 		});
-	}
-	function applyRootStyle(props, component){
-		component.element.setAttribute("style", props.style);
 	}
 	function uniqueComponents(options){
 		let ucom = window['unique_components'];
