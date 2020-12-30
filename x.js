@@ -3,11 +3,6 @@ function x(options){
 	function init(props, options){
 		let component = {};
 
-		// CSS --
-		if(options.css !== undefined){
-			loadCSS(options.css);
-		}
-
 		// $emit, $on --
 		component.$listeners = [];
 		component.$on = function(command, callback){
@@ -61,15 +56,20 @@ function x(options){
 			component.element = component.render();
 		}
 
+		// Mounted --
+		if(options.mounted != undefined){
+			component.mounted = options.mounted;
+			component.mounted();
+		}
+
 		// Apply root style --
 		if(props.style != undefined){
 			applyRootStyle(props, component);
 		}
 
-		// Mounted --
-		if(options.mounted != undefined){
-			component.mounted = options.mounted;
-			component.mounted();
+		// CSS --
+		if(options.css !== undefined){
+			loadCSS(options.css);
 		}
 
 		// Check Option ClassNames --
