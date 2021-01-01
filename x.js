@@ -1,11 +1,7 @@
 function x(options){
+	let singleStyle = false;
 	function init(props, options){
 		let component = {};
-
-		// CSS --
-		if(options.css !== undefined){
-			loadCSS(options.css);
-		}
 
 		// $emit, $on --
 		component.$listeners = [];
@@ -18,6 +14,14 @@ function x(options){
 					item.callback(payload);
 				}
 			});
+		};
+
+		// Set Child --
+		component.$setChild = function(child){
+			if(child.$css !== undefined){
+				createStyleTag(child.$css);
+			}
+			this.setChild(child);
 		};
 
 		// Binding Props --
@@ -50,17 +54,26 @@ function x(options){
 		if(options.render != undefined){
 			component.render = options.render;
 			component.element = component.render();
-		}
-
-		// Apply root style --
-		if(props.style != undefined){
-			applyRootStyle(props, component);
+			if(component.element.nodeType !== Node.ELEMENT_NODE){
+				console.log(component.element);
+				throw new Error("Must Return DOM Element : " + component.name);
+			}
 		}
 
 		// Mounted --
 		if(options.mounted != undefined){
 			component.mounted = options.mounted;
 			component.mounted();
+		}
+
+		// Apply root style --
+		if(props.style != undefined){
+			component.element.setAttribute("style", props.style);
+		}
+
+		// CSS --
+		if(options.css !== undefined){
+			loadCSS(options.css);
 		}
 
 		// Check Option ClassNames --
@@ -71,12 +84,22 @@ function x(options){
 		uniqueComponents(options);
 
 		return component;
-	};
+	}
+	function createStyleTag(css){
+		let el = document.createElement("style");
+		el.setAttribute("type", "text/css");
+		el.textContent = css;
+		document.documentElement.firstChild.appendChild(el);
+	}
 	function loadCSS(css){
-		if(window['x-style'] !== undefined){
-			window['x-style'] = window['x-style'] + css;
+		if(singleStyle == true){
+			if(window['x-style'] !== undefined){
+				window['x-style'] = window['x-style'] + css;
+			}else{
+				window['x-style'] = css;
+			}	
 		}else{
-			window['x-style'] = css;
+			createStyleTag(css);
 		}
 	}
 	function createScope(scope, component){
@@ -88,9 +111,6 @@ function x(options){
 			component.element.classList.add(name);
 		});
 	}
-	function applyRootStyle(props, component){
-		component.element.setAttribute("style", props.style);
-	}
 	function uniqueComponents(options){
 		let ucom = window['unique_components'];
 		if(ucom == undefined){
@@ -98,7 +118,6 @@ function x(options){
 		}
 		ucom.add(options.name);
 	}
-	
 	return function(props){
 		return init(props, options);
 	}
