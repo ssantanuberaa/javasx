@@ -1,5 +1,4 @@
 function x(options){
-	let singleStyle = false;
 	function init(props, options){
 		let component = {};
 
@@ -71,11 +70,6 @@ function x(options){
 			component.element.setAttribute("style", props.style);
 		}
 
-		// CSS --
-		if(options.css !== undefined){
-			loadCSS(options.css);
-		}
-
 		// Check Option ClassNames --
 		if(props.classNames != undefined){
 			applyClassName(props, component);	
@@ -84,23 +78,12 @@ function x(options){
 		uniqueComponents(options);
 
 		return component;
-	}
+	};
 	function createStyleTag(css){
 		let el = document.createElement("style");
 		el.setAttribute("type", "text/css");
 		el.textContent = css;
 		document.documentElement.firstChild.appendChild(el);
-	}
-	function loadCSS(css){
-		if(singleStyle == true){
-			if(window['x-style'] !== undefined){
-				window['x-style'] = window['x-style'] + css;
-			}else{
-				window['x-style'] = css;
-			}	
-		}else{
-			createStyleTag(css);
-		}
 	}
 	function createScope(scope, component){
 		component.$scope.push(scope);
@@ -111,13 +94,29 @@ function x(options){
 			component.element.classList.add(name);
 		});
 	}
+	function applyRootStyle(props, component){
+		component.element.setAttribute("style", props.style);
+	}
 	function uniqueComponents(options){
 		let ucom = window['unique_components'];
 		if(ucom == undefined){
 			ucom = window['unique_components'] = new Set();
 		}
-		ucom.add(options.name);
+
+		if(!ucom.has(options.name)){
+			ucom.add(options.name);
+			// CSS --
+			if(options.css !== undefined){
+				console.log(options.name);
+				let node = document.createElement("style");
+				node.setAttribute("component", options.name);
+				node.setAttribute("type", "text/css");
+				node.textContent = options.css;
+				document.documentElement.firstChild.appendChild(node);
+			}
+		}
 	}
+	
 	return function(props){
 		return init(props, options);
 	}
