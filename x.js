@@ -1,6 +1,9 @@
 function x(options){
+	let singleStyle = false;
 	function init(props, options){
 		let component = {};
+
+		globalTask(options);
 
 		// $emit, $on --
 		component.$listeners = [];
@@ -67,7 +70,16 @@ function x(options){
 
 		// Apply root style --
 		if(props.style != undefined){
-			component.element.setAttribute("style", props.style);
+			if(typeof props.style == "string"){
+				compnent.element.setAttribute("style", component.element.getAttribute("style") + props.style);
+			}else if(typeof props.style == "object"){
+				// Object implementation --
+			}
+		}
+
+		// CSS --
+		if(options.css !== undefined){
+			loadCSS(options);
 		}
 
 		// Check Option ClassNames --
@@ -75,15 +87,44 @@ function x(options){
 			applyClassName(props, component);	
 		}
 
-		uniqueComponents(options);
+		if(component.props.onInit !== undefined && isFunction(component.props.onInit)){
+			component.props.onInit(component);
+		}
 
 		return component;
-	};
-	function createStyleTag(css){
-		let el = document.createElement("style");
-		el.setAttribute("type", "text/css");
-		el.textContent = css;
-		document.documentElement.firstChild.appendChild(el);
+	}
+	function globalTask(options){
+		let $x = window['$x'];
+		if($x === undefined){
+			$x = window['$x'] = {
+				"unique_components" : new Set(),
+			};
+		}
+		// Add Unique components --
+		$x.unique_components.add(options.name);	
+	}
+	function isFunction(functionToCheck) {
+		return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
+	}
+	function createStyleTag(options){
+		$x = window['$x'];
+		if(!$x.unique_components.has(options.name)){
+			let el = document.createElement("style");
+			el.setAttribute("type", "text/css");
+			el.textContent = options.css;
+			document.documentElement.firstChild.appendChild(el);
+		}
+	}
+	function loadCSS(options){
+		if(singleStyle == true){
+			if(window['x-style'] !== undefined){
+				window['x-style'] = window['x-style'] + options.css;
+			}else{
+				window['x-style'] = options.css;
+			}	
+		}else{
+			createStyleTag(options);
+		}
 	}
 	function createScope(scope, component){
 		component.$scope.push(scope);
@@ -94,29 +135,6 @@ function x(options){
 			component.element.classList.add(name);
 		});
 	}
-	function applyRootStyle(props, component){
-		component.element.setAttribute("style", props.style);
-	}
-	function uniqueComponents(options){
-		let ucom = window['unique_components'];
-		if(ucom == undefined){
-			ucom = window['unique_components'] = new Set();
-		}
-
-		if(!ucom.has(options.name)){
-			ucom.add(options.name);
-			// CSS --
-			if(options.css !== undefined){
-				console.log(options.name);
-				let node = document.createElement("style");
-				node.setAttribute("component", options.name);
-				node.setAttribute("type", "text/css");
-				node.textContent = options.css;
-				document.documentElement.firstChild.appendChild(node);
-			}
-		}
-	}
-	
 	return function(props){
 		return init(props, options);
 	}
