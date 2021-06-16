@@ -3,6 +3,11 @@ function x(options){
 	function init(props, options){
 		let component = {};
 
+		// CSS --
+		if(options.css !== undefined){
+			loadCSS(options);
+		}
+
 		globalTask(options);
 
 		// $emit, $on --
@@ -71,15 +76,10 @@ function x(options){
 		// Apply root style --
 		if(props.style != undefined){
 			if(typeof props.style == "string"){
-				compnent.element.setAttribute("style", component.element.getAttribute("style") + props.style);
+				component.element.setAttribute("style", component.element.getAttribute("style") + props.style);
 			}else if(typeof props.style == "object"){
 				// Object implementation --
 			}
-		}
-
-		// CSS --
-		if(options.css !== undefined){
-			loadCSS(options);
 		}
 
 		// Check Option ClassNames --
@@ -101,7 +101,7 @@ function x(options){
 			};
 		}
 		// Add Unique components --
-		$x.unique_components.add(options.name);	
+		$x.unique_components.add(options.name);
 	}
 	function isFunction(functionToCheck) {
 		return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
