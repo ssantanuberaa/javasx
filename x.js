@@ -3,12 +3,12 @@ function x(options){
 	function init(props, options){
 		let component = {};
 
+		globalTask(options);
+
 		// CSS --
 		if(options.css !== undefined){
 			loadCSS(options);
 		}
-
-		globalTask(options);
 
 		// $emit, $on --
 		component.$listeners = [];
@@ -91,6 +91,8 @@ function x(options){
 			component.props.onInit(component);
 		}
 
+		add_component(options);
+
 		return component;
 	}
 	function globalTask(options){
@@ -100,14 +102,17 @@ function x(options){
 				"unique_components" : new Set(),
 			};
 		}
+	}
+	function add_component(options){
 		// Add Unique components --
+		let $x = window['$x'];
 		$x.unique_components.add(options.name);
 	}
 	function isFunction(functionToCheck) {
 		return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
 	}
 	function createStyleTag(options){
-		$x = window['$x'];
+		let $x = window['$x'];
 		if(!$x.unique_components.has(options.name)){
 			let el = document.createElement("style");
 			el.setAttribute("type", "text/css");
